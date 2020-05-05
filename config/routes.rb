@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
 # loginのルーティング
@@ -7,12 +8,12 @@ Rails.application.routes.draw do
   post "logout" => "users#logout"
   get "users/:id/likes" => "users#likes"
 # userのルーティング
-  post "users/:id/update" => "users#update"
-  get 'users/:id/edit' => 'users#edit'
-  post 'users/create' => 'users#create'
-  get 'signup' => 'users#new'
-  get 'users/index' => 'users#index'
-  get 'users/:id' => 'users#show'
+  # post "users/:id/update" => "users#update"
+  # get 'users/:id/edit' => 'users#edit'
+  # post 'users/create' => 'users#create'
+  # get 'signup' => 'users#new'
+  # get 'users/index' => 'users#index'
+  # get 'users/:id' => 'users#show'
 
 #postsのルーティング
   get 'posts/index' => "posts#index"
